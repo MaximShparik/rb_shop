@@ -258,7 +258,7 @@ export default {
   padding-bottom: 20px;
 }
 .ordered__item {
-  min-width: 250px;
+  width: 250px;
   margin-right: 35px;
   border: 1px solid rgb(204, 204, 204);
   padding: 30px;
