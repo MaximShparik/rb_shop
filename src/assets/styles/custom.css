@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+  background: white;
+}
+a {
+  color: black;
+}
+* {
+  font-weight: 300;
+  box-sizing: border-box;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(228, 228, 228); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(180, 180, 180); 
+}
+.el-button {
+  border-radius: 2px !important;
+}
+.btn {
+  cursor: pointer;
+  width: fit-content;
+  padding: 12px 20px;
+  background-color: rgb(65, 65, 65);
+  color: white;
+  margin: 0 auto;
+}
+.btn:hover {
+  background-color: rgb(8, 8, 8);
+}
+#app > div > div:nth-child(1) > div.nav > div.el-dropdown {
+  height: 60px;
+}
+.items .el-carousel__item, .wishlist .el-carousel__item {
+  display: flex;
+  align-items: center;
+}
+.items .el-carousel__container {
+  height: 100%;
+}
+.items .el-carousel__indicators--horizontal{
+  left: 0;
+  transform: none;
+  width: 100%;
+  text-align: center;
+}
+.brands__item .el-checkbox__label {
+  font-size: 16px;
+}
+.item .el-carousel, .item .el-carousel__container {
+  height: 100%;
+}
+.table .el-carousel__button {
+  background-color: darkgray;
+}
+.el-dropdown-menu.el-popper {
+  z-index: 100000 !important;
+}
+.login__dialog .el-dialog__body {
+  padding: 20px;
+}
+.login__dialog .el-dialog {
+  max-width: 400px;
+  margin-top: 50vh !important;
+  transform: translateY(-50%);
+}
+.login__dialog .el-dialog .el-dialog__header {
+  padding-bottom: 0;
+}
+.el-slider__button-wrapper {
+  z-index: 999 !important;
+}
+.profile .el-button--success {
+  color: #67c23a;
+  background: #f0f9eb;
+  border-color: #c2e7b0;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+.profile .el-button.el-button--success.is-circle {
+  height: fit-content;
+  margin: 18px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.profile .el-button.el-button--info {
+  height: 40px;
+  margin: 18px;
+  color: #909399;
+  background: #f4f4f5;
+  border-color: #d3d4d6;
+}
+.profile .el-button.el-button--info:active {
+  color: #fff;
+  background-color: #909399;
+  border-color: #909399;
+}
+.checkout .add__btn {
+  margin-left: auto;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px 10px;
+}
+.checkout .default__btn {
+  position: absolute;
+  right: 35px;
+  top: -20px;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px 10px;
+}
+.checkout .edit__btn {
+  position: absolute;
+  right: -15px;
+  top: -20px;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px 10px;
+}
+.profile .edit__btn {
+  position: absolute;
+  right: -15px;
+  top: -20px;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px 10px;
+}
+.profile .edit__btn.edit {
+  right: 30px;
+}
+.profile .edit__btn.default {
+  left: 97px;
+}
+.profile .edit__btn.default.active {
+  color: #67c23a;
+  background: #f0f9eb;
+  border-color: #c2e7b0;
+}
+.checkout .default__btn.active {
+  color: #67c23a;
+  background: #f0f9eb;
+  border-color: #c2e7b0;
+}
+.profile__info-edit {
+  height: fit-content;
+  margin: 18px !important;
+}
+.wishlist .el-carousel__container {
+  height: 250px;
+}
+.el-checkbox__inner {
+  border: 2px solid #808080 !important;
+  border-radius: 0px !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+.el-input__inner {
+  border-radius: 2px !important;
+  color: black;
+  padding: 0 10px;
+}
+.el-input__inner::placeholder {
+  font-family: 'Comfortaa', cursive;
+  color: #5d5353;
+}
+.el-checkbox__inner::after {
+  left: 5px !important;
+  top: 2px !important;
+}
+.icon__checkout {
+  font-size: 24px;
+  line-height: 30px !important;
+}
+.icon__checkout.normal {
+  font-size: 24px;
+  line-height: 16px !important;
+}
+@media screen and (max-width: 768px) {
+  .main .el-carousel__indicators--horizontal {
+    width: fit-content;
+  }
+  .filters__mobile .filter__list .el-checkbox__inner {
+    width: 20px;
+    height: 20px;
+  }
+  .filters__mobile .el-checkbox__inner::after {
+    left: 6px;
+    height: 11px;
+    width: 5px;
+  }
+  .el-dialog {
+    width: 90vw !important;
+  }
+  .el-dialog__wrapper {
+    overflow: hidden !important;
+  }
+  .content__desr .el-tabs__active-bar.is-top {
+    display: none;
+  }
+  .content__desr .el-tabs__nav.is-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .content__desr .el-tabs__item {
+    padding: 0;
+  }
+}

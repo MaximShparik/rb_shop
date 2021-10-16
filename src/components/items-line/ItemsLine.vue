@@ -1,0 +1,120 @@
+<template>
+  <div class="table">
+    <div class="table__title" v-if="title">
+      <router-link :to="{name: 'page-goods', query: { search: title }}">
+        {{title}}
+      </router-link>
+    </div>
+    <div
+      class="table__grid"
+      :style="'grid-template-columns: repeat(' + items__in__line + ', 1fr);'"
+    >
+      <router-link
+        v-for="(item, i) in items"
+        :key="i"
+        :to="{name: 'page-goods', param: { id: item.id }}"
+        class="grid__item"
+      >
+      <!-- <a
+        v-for="(item, i) in items"
+        :key="i"
+        :href="item.itemExternalUrl"
+        target="_blank"
+      > -->
+        <div class="photo">
+          <img :src="item.photos[0]" alt="">
+        </div>
+        <div class="text">
+          <p class="name">{{item.name}}</p>
+          <p class="color">{{item.colors[0]}}</p>
+          <el-tooltip
+            class="popup__text"
+            placement="top"
+            content="10% discount for first order"
+          >
+            <p class="price">From {{
+              item.sizes_prices[item.sizes_prices.map(el => el.price).indexOf(Math.min.apply(null, item.sizes_prices.map(el => el.price)))].price
+            }} $</p>
+          </el-tooltip>
+        </div>
+      <!-- </a> -->
+      </router-link>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  name: 'ItemsLine',
+  props: {
+    title: {
+      type: String,
+      default: null
+    },
+    items: {
+      type: Array,
+      default: () => []
+    },
+    items__in__line: {
+      type: String,
+      default: '6'
+    }
+  },
+  data () {
+    return {
+    }
+  }
+}
+</script>
+<style scoped>
+.table {
+  max-width: 1570px;
+  margin: 15px auto 35px;
+  padding: 0 15px;
+}
+.table__title {
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 0 0px 20px 0px;
+}
+.table__grid {
+  display: grid;
+  grid-gap: 20px;
+  overflow: auto;
+}
+.grid__item {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+.table__grid a {
+  text-decoration: none;
+  min-width: 200px;
+}
+.table__grid p {
+  margin: 7px 0;
+  color: black;
+  width: fit-content;
+}
+.photo {
+  min-height: 125px;
+  display: flex;
+  align-items: center;
+}
+.name {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 42px;
+}
+.name:hover {
+  color: grey;
+}
+.table__grid p.color {
+  color: grey;
+}
+.price {
+  font-size: 14px;
+}
+.table__grid img {
+  width: 100%;
+}
+</style>
